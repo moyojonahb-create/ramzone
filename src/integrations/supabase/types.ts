@@ -14,16 +14,311 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      custom_app_requests: {
+        Row: {
+          contact_email: string
+          contact_name: string
+          contact_phone: string | null
+          created_at: string
+          id: string
+          requirements: string | null
+          station_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          contact_email: string
+          contact_name: string
+          contact_phone?: string | null
+          created_at?: string
+          id?: string
+          requirements?: string | null
+          station_id: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          contact_email?: string
+          contact_name?: string
+          contact_phone?: string | null
+          created_at?: string
+          id?: string
+          requirements?: string | null
+          station_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "custom_app_requests_station_id_fkey"
+            columns: ["station_id"]
+            isOneToOne: false
+            referencedRelation: "radio_stations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      listener_sessions: {
+        Row: {
+          duration_minutes: number | null
+          ended_at: string | null
+          id: string
+          listener_id: string | null
+          session_id: string
+          started_at: string
+          station_id: string
+        }
+        Insert: {
+          duration_minutes?: number | null
+          ended_at?: string | null
+          id?: string
+          listener_id?: string | null
+          session_id: string
+          started_at?: string
+          station_id: string
+        }
+        Update: {
+          duration_minutes?: number | null
+          ended_at?: string | null
+          id?: string
+          listener_id?: string | null
+          session_id?: string
+          started_at?: string
+          station_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "listener_sessions_station_id_fkey"
+            columns: ["station_id"]
+            isOneToOne: false
+            referencedRelation: "radio_stations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      radio_stations: {
+        Row: {
+          created_at: string
+          description: string | null
+          frequency: string | null
+          genre: string
+          id: string
+          is_approved: boolean
+          is_live: boolean
+          listeners_count: number
+          location: string
+          logo_url: string | null
+          name: string
+          owner_id: string | null
+          slug: string
+          stream_url: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          frequency?: string | null
+          genre: string
+          id?: string
+          is_approved?: boolean
+          is_live?: boolean
+          listeners_count?: number
+          location: string
+          logo_url?: string | null
+          name: string
+          owner_id?: string | null
+          slug: string
+          stream_url?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          frequency?: string | null
+          genre?: string
+          id?: string
+          is_approved?: boolean
+          is_live?: boolean
+          listeners_count?: number
+          location?: string
+          logo_url?: string | null
+          name?: string
+          owner_id?: string | null
+          slug?: string
+          stream_url?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      station_analytics: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          peak_listeners: number
+          station_id: string
+          total_listeners: number
+          total_listening_minutes: number
+          unique_listeners: number
+        }
+        Insert: {
+          created_at?: string
+          date?: string
+          id?: string
+          peak_listeners?: number
+          station_id: string
+          total_listeners?: number
+          total_listening_minutes?: number
+          unique_listeners?: number
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          peak_listeners?: number
+          station_id?: string
+          total_listeners?: number
+          total_listening_minutes?: number
+          unique_listeners?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "station_analytics_station_id_fkey"
+            columns: ["station_id"]
+            isOneToOne: false
+            referencedRelation: "radio_stations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      subscriptions: {
+        Row: {
+          created_at: string
+          expires_at: string | null
+          id: string
+          max_listeners: number
+          plan: Database["public"]["Enums"]["subscription_plan"]
+          price_usd: number
+          started_at: string | null
+          station_id: string
+          status: Database["public"]["Enums"]["subscription_status"]
+          stripe_customer_id: string | null
+          stripe_subscription_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          max_listeners?: number
+          plan?: Database["public"]["Enums"]["subscription_plan"]
+          price_usd?: number
+          started_at?: string | null
+          station_id: string
+          status?: Database["public"]["Enums"]["subscription_status"]
+          stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          max_listeners?: number
+          plan?: Database["public"]["Enums"]["subscription_plan"]
+          price_usd?: number
+          started_at?: string | null
+          station_id?: string
+          status?: Database["public"]["Enums"]["subscription_status"]
+          stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "subscriptions_station_id_fkey"
+            columns: ["station_id"]
+            isOneToOne: true
+            referencedRelation: "radio_stations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      owns_station: {
+        Args: { _station_id: string; _user_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "station_owner" | "listener"
+      subscription_plan: "starter" | "professional" | "enterprise"
+      subscription_status: "active" | "expired" | "cancelled" | "pending"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +445,10 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "station_owner", "listener"],
+      subscription_plan: ["starter", "professional", "enterprise"],
+      subscription_status: ["active", "expired", "cancelled", "pending"],
+    },
   },
 } as const
