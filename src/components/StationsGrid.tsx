@@ -9,6 +9,7 @@ interface StationsGridProps {
   stations: RadioStation[];
   currentStation: RadioStation | null;
   onStationSelect: (station: RadioStation) => void;
+  loading?: boolean;
 }
 
 const StationsGrid = ({ stations, currentStation, onStationSelect }: StationsGridProps) => {
