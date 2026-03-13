@@ -12,7 +12,7 @@ interface StationsGridProps {
   loading?: boolean;
 }
 
-const StationsGrid = ({ stations, currentStation, onStationSelect }: StationsGridProps) => {
+const StationsGrid = ({ stations, currentStation, onStationSelect, loading }: StationsGridProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
 
