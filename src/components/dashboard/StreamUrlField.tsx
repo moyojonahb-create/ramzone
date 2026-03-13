@@ -91,6 +91,9 @@ const StreamUrlField = ({ value, onChange }: StreamUrlFieldProps) => {
           Enter a valid Shoutcast URL (e.g. http://your-server:8000/stream)
         </p>
       )}
+      {streamInfo && status === "valid" && (
+        <p className="text-xs text-live">{streamInfo}</p>
+      )}
       <div className="flex flex-wrap gap-2 mt-1">
         <Badge variant="secondary" className="text-xs">Shoutcast v2</Badge>
         <Badge variant="secondary" className="text-xs">MP3 / AAC</Badge>
