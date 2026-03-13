@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Link, CheckCircle, XCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 interface StreamUrlFieldProps {
   value: string;
@@ -16,43 +17,38 @@ const SHOUTCAST_URL_PATTERN = /^https?:\/\/.+:\d+(\/.*)?$/;
 
 const StreamUrlField = ({ value, onChange }: StreamUrlFieldProps) => {
   const [status, setStatus] = useState<StreamStatus>("idle");
+  const [streamInfo, setStreamInfo] = useState<string | null>(null);
 
   const isValidFormat = !value || SHOUTCAST_URL_PATTERN.test(value);
 
   const testStream = async () => {
     if (!value) return;
     setStatus("checking");
-    
+    setStreamInfo(null);
+
     try {
-      // Try to reach the stream - we just check if the URL responds
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 8000);
-      
-      const audio = new Audio();
-      const result = await new Promise<boolean>((resolve) => {
-        audio.addEventListener("canplay", () => resolve(true), { once: true });
-        audio.addEventListener("error", () => resolve(false), { once: true });
-        audio.src = value;
-        audio.load();
-        setTimeout(() => {
-          audio.pause();
-          audio.removeAttribute("src");
-          resolve(false);
-        }, 8000);
+      const { data, error } = await supabase.functions.invoke("check-stream-status", {
+        body: { streamUrl: value },
       });
 
-      clearTimeout(timeout);
-      audio.pause();
-      audio.removeAttribute("src");
-      audio.load();
-      
-      setStatus(result ? "valid" : "invalid");
+      if (error) throw error;
+
+      if (data?.online) {
+        setStatus("valid");
+        const info = [];
+        if (data.listeners !== null) info.push(`${data.listeners} listeners`);
+        if (data.bitrate) info.push(`${data.bitrate}kbps`);
+        if (data.title) info.push(data.title);
+        setStreamInfo(info.join(" · ") || "Stream is online");
+      } else {
+        setStatus("invalid");
+        setStreamInfo(null);
+      }
     } catch {
       setStatus("invalid");
     }
 
-    // Reset after 5s
-    setTimeout(() => setStatus("idle"), 5000);
+    setTimeout(() => { setStatus("idle"); setStreamInfo(null); }, 8000);
   };
 
   return (
