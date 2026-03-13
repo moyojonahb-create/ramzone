@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Upload, Loader2, Save, Radio, Link, MapPin, Music } from "lucide-react";
+import { Upload, Loader2, Save, Radio, MapPin, Music } from "lucide-react";
+import StreamUrlField from "./StreamUrlField";
 
 interface StationSettingsProps {
   station: Station | null;
@@ -246,20 +247,10 @@ const StationSettings = ({ station, hasStation, onStationUpdate, onStationCreate
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="stream_url">Stream URL</Label>
-                <Input
-                  id="stream_url"
-                  name="stream_url"
-                  value={formData.stream_url}
-                  onChange={handleInputChange}
-                  placeholder="https://stream.example.com/live"
-                  className="bg-secondary border-border"
-                />
-                <p className="text-xs text-muted-foreground">
-                  Your Icecast/Shoutcast stream URL from RadioBoss
-                </p>
-              </div>
+              <StreamUrlField
+                value={formData.stream_url}
+                onChange={handleInputChange}
+              />
 
               <div className="space-y-2">
                 <Label htmlFor="description">Description</Label>
@@ -407,22 +398,10 @@ const StationSettings = ({ station, hasStation, onStationUpdate, onStationCreate
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="stream_url" className="flex items-center gap-2">
-                <Link className="w-4 h-4" /> Stream URL
-              </Label>
-              <Input
-                id="stream_url"
-                name="stream_url"
-                value={formData.stream_url}
-                onChange={handleInputChange}
-                placeholder="https://stream.example.com/live"
-                className="bg-secondary border-border"
-              />
-              <p className="text-xs text-muted-foreground">
-                Your Icecast/Shoutcast stream URL from RadioBoss. This is the link listeners will use to tune in.
-              </p>
-            </div>
+            <StreamUrlField
+              value={formData.stream_url}
+              onChange={handleInputChange}
+            />
 
             <div className="space-y-2">
               <Label htmlFor="description">Description</Label>
