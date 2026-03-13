@@ -408,22 +408,10 @@ const StationSettings = ({ station, hasStation, onStationUpdate, onStationCreate
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="stream_url" className="flex items-center gap-2">
-                <Link className="w-4 h-4" /> Stream URL
-              </Label>
-              <Input
-                id="stream_url"
-                name="stream_url"
-                value={formData.stream_url}
-                onChange={handleInputChange}
-                placeholder="https://stream.example.com/live"
-                className="bg-secondary border-border"
-              />
-              <p className="text-xs text-muted-foreground">
-                Your Icecast/Shoutcast stream URL from RadioBoss. This is the link listeners will use to tune in.
-              </p>
-            </div>
+            <StreamUrlField
+              value={formData.stream_url}
+              onChange={handleInputChange}
+            />
 
             <div className="space-y-2">
               <Label htmlFor="description">Description</Label>
