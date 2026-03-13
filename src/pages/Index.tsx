@@ -7,11 +7,12 @@ import BroadcasterSection from "@/components/BroadcasterSection";
 import CustomAppSection from "@/components/CustomAppSection";
 import AudioPlayer from "@/components/AudioPlayer";
 import Footer from "@/components/Footer";
-import { radioStations } from "@/data/stations";
+import { useStations } from "@/hooks/useStations";
 import { RadioStation } from "@/types/radio";
 
 const Index = () => {
   const [currentStation, setCurrentStation] = useState<RadioStation | null>(null);
+  const { stations, loading } = useStations();
 
   const handleStationSelect = (station: RadioStation) => {
     setCurrentStation(station);
@@ -26,9 +27,10 @@ const Index = () => {
       <Header />
       <HeroSection />
       <StationsGrid
-        stations={radioStations}
+        stations={stations}
         currentStation={currentStation}
         onStationSelect={handleStationSelect}
+        loading={loading}
       />
       <BroadcasterSection />
       <PricingSection />
