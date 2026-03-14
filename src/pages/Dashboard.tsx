@@ -132,6 +132,17 @@ const Dashboard = () => {
               onStationCreated={handleStationCreated}
             />
           )}
+          {activeTab === "streaming" && (
+            <div className="max-w-4xl mx-auto">
+              <StreamCredentials
+                host={station?.shoutcast_host || null}
+                port={station?.shoutcast_port || null}
+                password={station?.shoutcast_password || null}
+                mountPoint={station?.mount_point || null}
+                streamUrl={station?.stream_url || null}
+              />
+            </div>
+          )}
           {activeTab === "analytics" && (
             <AnalyticsPanel station={station} />
           )}
