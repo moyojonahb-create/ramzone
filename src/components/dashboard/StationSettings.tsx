@@ -155,6 +155,36 @@ const StationSettings = ({ station, hasStation, onStationUpdate, onStationCreate
 
         if (error) throw error;
 
+        // Auto-provision stream credentials
+        try {
+          const { data: provisionData, error: provisionError } = await supabase.functions.invoke("provision-station", {
+            body: { stationId: data.id, stationName: formData.name },
+          });
+          
+          if (provisionError) {
+            console.error("Provisioning error:", provisionError);
+            toast({
+              title: "Station created",
+              description: "Station created but stream provisioning failed. You can retry from the Streaming tab.",
+              variant: "default",
+            });
+          } else {
+            // Merge provisioned credentials into station data
+            const provisionedStation = {
+              ...data,
+              ...provisionData.credentials,
+            };
+            onStationCreated(provisionedStation as Station);
+            toast({
+              title: "Station created & provisioned! 🎉",
+              description: "Your stream credentials are ready in the Streaming tab.",
+            });
+            return;
+          }
+        } catch (provErr) {
+          console.error("Provision call failed:", provErr);
+        }
+
         // Create default subscription
         await supabase.from("subscriptions").insert({
           station_id: data.id,

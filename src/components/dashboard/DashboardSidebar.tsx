@@ -19,6 +19,7 @@ const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarProps) => 
 
   const menuItems = [
     { id: "settings", label: "Station Settings", icon: Settings },
+    { id: "streaming", label: "Streaming", icon: Wifi },
     { id: "analytics", label: "Analytics", icon: BarChart3 },
     { id: "subscription", label: "Subscription", icon: CreditCard },
   ];
