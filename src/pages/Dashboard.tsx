@@ -8,6 +8,7 @@ import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import StationSettings from "@/components/dashboard/StationSettings";
 import AnalyticsPanel from "@/components/dashboard/AnalyticsPanel";
 import SubscriptionPanel from "@/components/dashboard/SubscriptionPanel";
+import StreamCredentials from "@/components/dashboard/StreamCredentials";
 import { Loader2 } from "lucide-react";
 
 export interface Station {
@@ -23,6 +24,11 @@ export interface Station {
   is_live: boolean;
   is_approved: boolean;
   listeners_count: number;
+  shoutcast_host: string | null;
+  shoutcast_port: number | null;
+  shoutcast_password: string | null;
+  mount_point: string | null;
+  azuracast_station_id: number | null;
 }
 
 export interface Subscription {
@@ -126,6 +132,17 @@ const Dashboard = () => {
               onStationUpdate={handleStationUpdate}
               onStationCreated={handleStationCreated}
             />
+          )}
+          {activeTab === "streaming" && (
+            <div className="max-w-4xl mx-auto">
+              <StreamCredentials
+                host={station?.shoutcast_host || null}
+                port={station?.shoutcast_port || null}
+                password={station?.shoutcast_password || null}
+                mountPoint={station?.mount_point || null}
+                streamUrl={station?.stream_url || null}
+              />
+            </div>
           )}
           {activeTab === "analytics" && (
             <AnalyticsPanel station={station} />

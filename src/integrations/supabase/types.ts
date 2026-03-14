@@ -131,6 +131,7 @@ export type Database = {
       }
       radio_stations: {
         Row: {
+          azuracast_station_id: number | null
           created_at: string
           description: string | null
           frequency: string | null
@@ -141,13 +142,18 @@ export type Database = {
           listeners_count: number
           location: string
           logo_url: string | null
+          mount_point: string | null
           name: string
           owner_id: string | null
+          shoutcast_host: string | null
+          shoutcast_password: string | null
+          shoutcast_port: number | null
           slug: string
           stream_url: string | null
           updated_at: string
         }
         Insert: {
+          azuracast_station_id?: number | null
           created_at?: string
           description?: string | null
           frequency?: string | null
@@ -158,13 +164,18 @@ export type Database = {
           listeners_count?: number
           location: string
           logo_url?: string | null
+          mount_point?: string | null
           name: string
           owner_id?: string | null
+          shoutcast_host?: string | null
+          shoutcast_password?: string | null
+          shoutcast_port?: number | null
           slug: string
           stream_url?: string | null
           updated_at?: string
         }
         Update: {
+          azuracast_station_id?: number | null
           created_at?: string
           description?: string | null
           frequency?: string | null
@@ -175,8 +186,12 @@ export type Database = {
           listeners_count?: number
           location?: string
           logo_url?: string | null
+          mount_point?: string | null
           name?: string
           owner_id?: string | null
+          shoutcast_host?: string | null
+          shoutcast_password?: string | null
+          shoutcast_port?: number | null
           slug?: string
           stream_url?: string | null
           updated_at?: string
