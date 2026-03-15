@@ -1,4 +1,4 @@
-import { Radio, Settings, BarChart3, CreditCard, LogOut, Home, Wifi } from "lucide-react";
+import { Radio, Settings, BarChart3, CreditCard, LogOut, Home, Wifi, Smartphone } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -22,6 +22,7 @@ const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarProps) => 
     { id: "streaming", label: "Streaming", icon: Wifi },
     { id: "analytics", label: "Analytics", icon: BarChart3 },
     { id: "subscription", label: "Subscription", icon: CreditCard },
+    { id: "custom-app", label: "Custom App", icon: Smartphone },
   ];
 
   return (
