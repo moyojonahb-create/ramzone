@@ -9,6 +9,7 @@ import StationSettings from "@/components/dashboard/StationSettings";
 import AnalyticsPanel from "@/components/dashboard/AnalyticsPanel";
 import SubscriptionPanel from "@/components/dashboard/SubscriptionPanel";
 import StreamCredentials from "@/components/dashboard/StreamCredentials";
+import CustomAppPanel from "@/components/dashboard/CustomAppPanel";
 import { Loader2 } from "lucide-react";
 
 export interface Station {
