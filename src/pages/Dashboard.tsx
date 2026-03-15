@@ -151,6 +151,9 @@ const Dashboard = () => {
           {activeTab === "subscription" && (
             <SubscriptionPanel station={station} subscription={subscription} />
           )}
+          {activeTab === "custom-app" && (
+            <CustomAppPanel station={station} />
+          )}
         </main>
       </div>
     </div>

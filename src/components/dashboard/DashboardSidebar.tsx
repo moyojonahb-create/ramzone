@@ -22,6 +22,7 @@ const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarProps) => 
     { id: "streaming", label: "Streaming", icon: Wifi },
     { id: "analytics", label: "Analytics", icon: BarChart3 },
     { id: "subscription", label: "Subscription", icon: CreditCard },
+    { id: "custom-app", label: "Custom App", icon: Smartphone },
   ];
 
   return (
