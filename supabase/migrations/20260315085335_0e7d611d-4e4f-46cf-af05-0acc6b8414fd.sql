@@ -1,0 +1,37 @@
+
+INSERT INTO public.radio_stations (name, slug, genre, location, description, stream_url, is_approved, is_live, listeners_count, frequency, logo_url)
+VALUES
+  ('Star FM', 'star-fm', 'Pop & Hits', 'Harare', 'Zimbabwe''s number one hit music station', 'https://stream.zeno.fm/star-fm42qk430nw98uv', true, true, 8920, '89.7 FM', null),
+  ('Power FM Zimbabwe', 'power-fm-zimbabwe', 'Urban', 'Harare', 'Power to the people - urban beats and entertainment', 'https://stream.zeno.fm/power-fm-zimbabwe', true, true, 6750, '99.3 FM', null),
+  ('Capitalk 100.4 FM', 'capitalk-100-4fm', 'Business & Talk', 'Harare', 'Zimbabwe''s business and talk radio', 'https://stream.zeno.fm/capitalk-100-4fm-harare', true, true, 5430, '100.4 FM', null),
+  ('Diamond FM', 'diamond-fm-zim', 'General', 'Mutare', 'Zimbabwe''s leading regional commercial radio station broadcasting from Manicaland', 'https://stream.zeno.fm/diamond-fm-zim', true, true, 3890, '103.8 FM', null),
+  ('Breeze FM', 'breezefm-912', 'Gospel', 'Mutare', 'Uplifting gospel music and inspirational programming', 'https://stream.zeno.fm/breezefm-912', true, true, 4210, '91.2 FM', null),
+  ('Khulumani FM', 'khulumani-fm', 'News & Talk', 'Bulawayo', 'Matabeleland''s community voice', 'https://stream.zeno.fm/khulumani-fm', true, true, 4560, '95.0 FM', null),
+  ('Khulumani FM 95.0', 'khulumani-fm-95-0', 'News & Talk', 'Bulawayo', 'Community radio serving Matabeleland', 'https://stream.zeno.fm/khulumani-fm-95-0', true, true, 3200, '95.0 FM', null),
+  ('Skyz Metro FM', 'skyzmetrofm-1003', 'Hip Hop', 'Bulawayo', 'Urban culture, hip hop and entertainment from Bulawayo', 'https://stream.zeno.fm/skyzmetrofm-1003', true, true, 7230, '100.3 FM', null),
+  ('Nyami Nyami FM', 'nyami-nyami-fm', 'Community', 'Kariba', 'Voice of the Kariba community', 'https://stream.zeno.fm/nyami-nyami-fm', true, true, 1890, '88.5 FM', null),
+  ('Hevoi FM', 'hevoi-fm', 'Community', 'Masvingo', 'Community radio for all in Masvingo', 'https://stream.zeno.fm/hevoi-fm', true, true, 2340, '97.1 FM', null),
+  ('Ya FM', 'ya-fm', 'Youth', 'Harare', 'Young, fresh and dynamic youth radio', 'https://stream.zeno.fm/ya-fm', true, true, 5670, '94.2 FM', null),
+  ('Radio Zimbabwe FM 96.0', 'radio-zimbabwe-fm-96-0', 'News & Talk', 'Harare', 'Zimbabwe''s premier national broadcaster', 'https://stream.zeno.fm/radio-zimbabwe-fm-96-0', true, true, 12540, '96.0 FM', null),
+  ('Nehanda Radio', 'nehanda-radio', 'General', 'Harare', 'Independent Zimbabwean news and current affairs', 'https://stream.zeno.fm/nehanda-radio', true, true, 6100, null, null),
+  ('Kwekwe Community Radio', 'kwekwe-community-radio-station', 'Community', 'Kwekwe', 'Community media service broadcasting to Kwekwe Urban, Peri Urban and Rural', 'https://stream.zeno.fm/kwekwe-community-radio-station', true, true, 1500, null, null),
+  ('Kasambabezi Community Radio', 'kasambabezi-community-radio', 'Community', 'Zimbabwe', 'Community radio serving local communities', 'https://stream.zeno.fm/kasambabezi-community-radio', true, true, 1200, null, null),
+  ('Ntepe-Manama Community Radio', 'ntepe-manama-community-radio', 'Community', 'Manama', 'Community radio serving Ntepe-Manama area', 'https://stream.zeno.fm/ntepe-manama-community-radio', true, true, 980, null, null),
+  ('GZU Campus Radio', 'gzucampusradio', 'Community', 'Masvingo', 'Campus radio operated by Great Zimbabwe University students', 'https://stream.zeno.fm/gzucampusradio', true, true, 1800, null, null),
+  ('Pumula FM', 'pumula-fm', 'Community', 'Bulawayo', 'Community radio from Pumula, Bulawayo', 'https://stream.zeno.fm/pumula-fm', true, true, 1400, null, null),
+  ('AVUXENI FM', 'avuxeni-fm-crs', 'Community', 'Zimbabwe', 'Community radio station serving local communities', 'https://stream.zeno.fm/avuxeni-fm-crs', true, true, 1100, null, null),
+  ('Norton FM', 'norton-fm', 'Community', 'Norton', 'Community radio serving Norton town', 'https://stream.zeno.fm/norton-fm', true, true, 1300, null, null),
+  ('Beitbridge FM', 'beitbridge-fm', 'Community', 'Beitbridge', 'Community radio from Zimbabwe''s southern border town', 'https://stream.zeno.fm/beitbridge-fm', true, true, 1050, null, null),
+  ('Bayethe 107.6 FM', 'bayethe-107-6-fm', 'Community', 'Bulawayo', 'Community radio broadcasting from Bulawayo', 'https://stream.zeno.fm/bayethe-107-6-fm', true, true, 1600, '107.6 FM', null),
+  ('984 Midlands FM', '984midlands-fm', 'General', 'Gweru', 'Midlands province radio station', 'https://stream.zeno.fm/984midlands-fm', true, true, 2800, '98.4 FM', null),
+  ('Royal FM Stereo', 'royal-fm-stereo-zimbabwe', 'General', 'Zimbabwe', 'Royal FM Stereo Zimbabwe', 'https://stream.zeno.fm/royal-fm-stereo-zimbabwe', true, true, 2100, null, null),
+  ('ZIM FM', 'zim-fm', 'General', 'Harare', 'Zimbabwe online radio station', 'https://stream.zeno.fm/zim-fm', true, true, 3500, null, null),
+  ('National FM ZBC', 'national-fm-zbc', 'News & Talk', 'Harare', 'ZBC National FM - national news and programming', 'https://stream.zeno.fm/national-fm-zbc', true, true, 9800, null, null),
+  ('Classic 263', 'classic-263', 'Classical', 'Harare', 'Timeless classical and easy listening music', 'https://stream.zeno.fm/classic-263', true, true, 2150, null, null),
+  ('NUST FM', 'nustfm', 'Community', 'Bulawayo', 'National University of Science and Technology campus radio', 'https://stream.zeno.fm/nustfm', true, true, 1700, null, null),
+  ('Kumba Online Radio', 'kumba-online-radio', 'News & Talk', 'Zimbabwe', 'Online news and talk radio', 'https://stream.zeno.fm/kumba-online-radio', true, true, 1400, null, null),
+  ('Radio Bukalanga', 'radio-bukalanga', 'Community', 'Bulawayo', 'Community radio for the Kalanga people', 'https://stream.zeno.fm/radio-bukalanga', true, true, 1250, null, null)
+ON CONFLICT (slug) DO UPDATE SET
+  stream_url = EXCLUDED.stream_url,
+  is_approved = true,
+  is_live = true;
