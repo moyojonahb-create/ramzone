@@ -25,9 +25,9 @@ export interface Station {
   is_live: boolean;
   is_approved: boolean;
   listeners_count: number;
-  shoutcast_host: string | null;
-  shoutcast_port: number | null;
-  shoutcast_password: string | null;
+  icecast_host: string | null;
+  icecast_port: number | null;
+  icecast_password: string | null;
   mount_point: string | null;
   azuracast_station_id: number | null;
 }
@@ -137,9 +137,9 @@ const Dashboard = () => {
           {activeTab === "streaming" && (
             <div className="max-w-4xl mx-auto">
               <StreamCredentials
-                host={station?.shoutcast_host || null}
-                port={station?.shoutcast_port || null}
-                password={station?.shoutcast_password || null}
+                host={station?.icecast_host || null}
+                port={station?.icecast_port || null}
+                password={station?.icecast_password || null}
                 mountPoint={station?.mount_point || null}
                 streamUrl={station?.stream_url || null}
               />
