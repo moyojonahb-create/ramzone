@@ -49,9 +49,9 @@ serve(async (req) => {
     const { error: updateError } = await supabase
       .from("radio_stations")
       .update({
-        shoutcast_host: credentials.icecast_host,
-        shoutcast_port: credentials.icecast_port,
-        shoutcast_password: credentials.icecast_password,
+        icecast_host: credentials.icecast_host,
+        icecast_port: credentials.icecast_port,
+        icecast_password: credentials.icecast_password,
         mount_point: credentials.mount_point,
         azuracast_station_id: credentials.azuracast_station_id,
         stream_url: credentials.stream_url,
