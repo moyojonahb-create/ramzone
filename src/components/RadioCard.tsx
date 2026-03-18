@@ -91,6 +91,8 @@ const RadioCard = forwardRef<HTMLDivElement, RadioCardProps>(({ station, isPlayi
       )}
     </motion.div>
   );
-};
+});
+
+RadioCard.displayName = "RadioCard";
 
 export default RadioCard;
