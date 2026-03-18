@@ -25,9 +25,9 @@ export interface Station {
   is_live: boolean;
   is_approved: boolean;
   listeners_count: number;
-  shoutcast_host: string | null;
-  shoutcast_port: number | null;
-  shoutcast_password: string | null;
+  icecast_host: string | null;
+  icecast_port: number | null;
+  icecast_password: string | null;
   mount_point: string | null;
   azuracast_station_id: number | null;
 }
