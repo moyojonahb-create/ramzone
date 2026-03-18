@@ -50,7 +50,7 @@ const StreamCredentials = ({ host, port, password, mountPoint, streamUrl }: Stre
             <CardTitle className="font-display text-xl flex items-center gap-2">
               <Server className="w-5 h-5" /> Stream Credentials
             </CardTitle>
-            <CardDescription>Use these in RadioBoss, SAM Broadcaster, or any Shoutcast encoder</CardDescription>
+            <CardDescription>Use these in RadioBoss, BUTT, or any Icecast-compatible encoder</CardDescription>
           </div>
           <Badge variant="secondary" className="bg-primary/10 text-primary">Trial Server</Badge>
         </div>
