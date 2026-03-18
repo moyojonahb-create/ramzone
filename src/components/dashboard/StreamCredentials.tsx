@@ -50,7 +50,7 @@ const StreamCredentials = ({ host, port, password, mountPoint, streamUrl }: Stre
             <CardTitle className="font-display text-xl flex items-center gap-2">
               <Server className="w-5 h-5" /> Stream Credentials
             </CardTitle>
-            <CardDescription>Use these in RadioBoss, SAM Broadcaster, or any Shoutcast encoder</CardDescription>
+            <CardDescription>Use these in RadioBoss, BUTT, or any Icecast-compatible encoder</CardDescription>
           </div>
           <Badge variant="secondary" className="bg-primary/10 text-primary">Trial Server</Badge>
         </div>
@@ -90,12 +90,24 @@ const StreamCredentials = ({ host, port, password, mountPoint, streamUrl }: Stre
         </div>
 
         <div className="rounded-lg bg-secondary/50 p-4 mt-4">
-          <h4 className="font-medium text-sm mb-2">📻 Quick Setup for RadioBoss</h4>
+          <h4 className="font-medium text-sm mb-2">📻 Quick Setup with BUTT (Broadcast Using This Tool)</h4>
+          <ol className="text-xs text-muted-foreground space-y-1 list-decimal list-inside">
+            <li>Download & open BUTT → Settings → Main → Server</li>
+            <li>Select <strong>"Icecast"</strong> as the server type</li>
+            <li>Enter the Server/Host, Port, and Password from above</li>
+            <li>Set the Mount Point to <code className="bg-background px-1 rounded">{mountPoint || "/stream"}</code></li>
+            <li>Set Icecast User to <code className="bg-background px-1 rounded">source</code></li>
+            <li>Click the Play button to start broadcasting!</li>
+          </ol>
+        </div>
+
+        <div className="rounded-lg bg-secondary/50 p-4">
+          <h4 className="font-medium text-sm mb-2">📻 Setup for RadioBoss</h4>
           <ol className="text-xs text-muted-foreground space-y-1 list-decimal list-inside">
             <li>Open RadioBoss → Settings → Broadcast</li>
-            <li>Select "SHOUTcast v2" as the server type</li>
+            <li>Select <strong>"Icecast"</strong> as the server type</li>
             <li>Enter the Server, Port, and Password from above</li>
-            <li>Set the Mount Point to <code className="bg-background px-1 rounded">{mountPoint || "/stream"}</code></li>
+            <li>Set Mount Point to <code className="bg-background px-1 rounded">{mountPoint || "/stream"}</code></li>
             <li>Click "Start" to begin broadcasting!</li>
           </ol>
         </div>

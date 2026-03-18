@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { RadioStation } from "@/types/radio";
 import { Play, Pause, Radio, Users } from "lucide-react";
 import { motion } from "framer-motion";
@@ -9,7 +10,7 @@ interface RadioCardProps {
   onPlay: () => void;
 }
 
-const RadioCard = ({ station, isPlaying, onPlay }: RadioCardProps) => {
+const RadioCard = forwardRef<HTMLDivElement, RadioCardProps>(({ station, isPlaying, onPlay }, ref) => {
   return (
     <motion.div
       className="group relative gradient-card rounded-2xl p-4 border border-border hover:border-primary/50 transition-all duration-300 hover-lift cursor-pointer"
@@ -90,6 +91,8 @@ const RadioCard = ({ station, isPlaying, onPlay }: RadioCardProps) => {
       )}
     </motion.div>
   );
-};
+});
+
+RadioCard.displayName = "RadioCard";
 
 export default RadioCard;

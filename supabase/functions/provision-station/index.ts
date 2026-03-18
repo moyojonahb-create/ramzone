@@ -27,35 +27,31 @@ serve(async (req) => {
       throw new Error("stationId and stationName are required");
     }
 
-    // TODO: Replace with real AzuraCast API call
-    // const azuraResponse = await fetch(`${AZURACAST_URL}/api/admin/stations`, {
-    //   method: "POST",
-    //   headers: { "X-API-Key": AZURACAST_API_KEY, "Content-Type": "application/json" },
-    //   body: JSON.stringify({ name: stationName, ... })
-    // });
+    // TODO: Replace with real Icecast / AzuraCast API call
+    // AzuraCast natively supports Icecast and can provision mount points via its API
 
-    // Mock AzuraCast provisioning response
+    // Mock Icecast provisioning response
     const port = 8000 + Math.floor(Math.random() * 2000);
     const password = generatePassword(16);
     const mountPoint = `/${stationName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
     const azuracastStationId = Math.floor(Math.random() * 10000) + 1;
 
     const credentials = {
-      shoutcast_host: "stream.ramzone.lovable.app", // Fake host for trial
-      shoutcast_port: port,
-      shoutcast_password: password,
+      icecast_host: "stream.ramzone.lovable.app",
+      icecast_port: port,
+      icecast_password: password,
       mount_point: mountPoint,
       azuracast_station_id: azuracastStationId,
       stream_url: `http://stream.ramzone.lovable.app:${port}${mountPoint}`,
     };
 
-    // Update the station with provisioned credentials
+    // Update the station with provisioned Icecast credentials
     const { error: updateError } = await supabase
       .from("radio_stations")
       .update({
-        shoutcast_host: credentials.shoutcast_host,
-        shoutcast_port: credentials.shoutcast_port,
-        shoutcast_password: credentials.shoutcast_password,
+        shoutcast_host: credentials.icecast_host,
+        shoutcast_port: credentials.icecast_port,
+        shoutcast_password: credentials.icecast_password,
         mount_point: credentials.mount_point,
         azuracast_station_id: credentials.azuracast_station_id,
         stream_url: credentials.stream_url,

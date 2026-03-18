@@ -96,7 +96,7 @@ const AudioPlayer = ({ station, onClose }: AudioPlayerProps) => {
     } else {
       setIsBuffering(true);
       setHasError(false);
-      // Reload stream for fresh connection (Shoutcast streams don't resume)
+      // Reload stream for fresh connection (Icecast streams don't resume)
       audio.src = station.streamUrl;
       audio.play().catch(() => {
         setIsBuffering(false);
