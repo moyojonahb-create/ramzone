@@ -136,6 +136,9 @@ export type Database = {
           description: string | null
           frequency: string | null
           genre: string
+          icecast_host: string | null
+          icecast_password: string | null
+          icecast_port: number | null
           id: string
           is_approved: boolean
           is_live: boolean
@@ -145,9 +148,6 @@ export type Database = {
           mount_point: string | null
           name: string
           owner_id: string | null
-          shoutcast_host: string | null
-          shoutcast_password: string | null
-          shoutcast_port: number | null
           slug: string
           stream_url: string | null
           updated_at: string
@@ -158,6 +158,9 @@ export type Database = {
           description?: string | null
           frequency?: string | null
           genre: string
+          icecast_host?: string | null
+          icecast_password?: string | null
+          icecast_port?: number | null
           id?: string
           is_approved?: boolean
           is_live?: boolean
@@ -167,9 +170,6 @@ export type Database = {
           mount_point?: string | null
           name: string
           owner_id?: string | null
-          shoutcast_host?: string | null
-          shoutcast_password?: string | null
-          shoutcast_port?: number | null
           slug: string
           stream_url?: string | null
           updated_at?: string
@@ -180,6 +180,9 @@ export type Database = {
           description?: string | null
           frequency?: string | null
           genre?: string
+          icecast_host?: string | null
+          icecast_password?: string | null
+          icecast_port?: number | null
           id?: string
           is_approved?: boolean
           is_live?: boolean
@@ -189,9 +192,6 @@ export type Database = {
           mount_point?: string | null
           name?: string
           owner_id?: string | null
-          shoutcast_host?: string | null
-          shoutcast_password?: string | null
-          shoutcast_port?: number | null
           slug?: string
           stream_url?: string | null
           updated_at?: string
