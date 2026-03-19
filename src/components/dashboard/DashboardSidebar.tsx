@@ -1,4 +1,4 @@
-import { Radio, Settings, BarChart3, CreditCard, LogOut, Home, Wifi, Smartphone } from "lucide-react";
+import { Radio, Settings, BarChart3, CreditCard, LogOut, Home, Wifi, Smartphone, Mic } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
