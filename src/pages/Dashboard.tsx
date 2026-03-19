@@ -146,6 +146,9 @@ const Dashboard = () => {
               />
             </div>
           )}
+          {activeTab === "broadcast" && (
+            <BroadcastStudio station={station} />
+          )}
           {activeTab === "analytics" && (
             <AnalyticsPanel station={station} />
           )}
