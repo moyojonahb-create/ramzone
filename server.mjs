@@ -121,6 +121,9 @@ app.get("/api/radio-stream", (req, res) => {
       res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
       res.setHeader("Pragma", "no-cache");
       res.setHeader("Expires", "0");
+      res.setHeader("Transfer-Encoding", "chunked");
+      res.setHeader("Accept-Ranges", "none");
+      res.setHeader("X-Content-Type-Options", "nosniff");
 
       const icyStripper = stripIcyPreface();
 
