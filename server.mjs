@@ -5,9 +5,12 @@ import { PassThrough } from "node:stream";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const STREAM_HOST = "82.145.63.6";
+const STREAM_PORT = 10424;
+const STREAM_PATHS = ["/stream", "/;stream.mp3", "/;", "/live", "/stream.mp3", "/radio"];
 const STREAM_URLS = [
-  "http://82.145.63.6:10424/stream",
-  "http://82.145.63.6:10424/;stream.mp3",
+  ...STREAM_PATHS.map((path) => `http://${STREAM_HOST}:${STREAM_PORT}${path}`),
+  // Keep HTTPS relay as last fallback
   "https://fpsnew1.listen2myradio.com:2199/listen.php?ip=82.145.63.6&port=10424&type=s1",
 ];
 
@@ -106,6 +109,7 @@ app.get("/api/radio-stream", (req, res) => {
     }
 
     const url = STREAM_URLS[index];
+    console.log("Trying stream:", url);
     upstreamRequest = connectStream(url);
 
     upstreamRequest.on("response", (stream) => {
@@ -126,6 +130,8 @@ app.get("/api/radio-stream", (req, res) => {
         tryUrl(index + 1);
         return;
       }
+
+      console.log("Connected to stream:", url);
 
       settled = true;
       res.setHeader("Content-Type", "audio/mpeg");
