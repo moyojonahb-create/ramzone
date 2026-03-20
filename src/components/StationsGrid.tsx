@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RadioStation } from "@/types/radio";
 import RadioCard from "./RadioCard";
+import FeaturedStationCard from "./FeaturedStationCard";
 import { Input } from "@/components/ui/input";
 import { Search, Filter } from "lucide-react";
 import { motion } from "framer-motion";
@@ -29,6 +30,11 @@ const StationsGrid = ({ stations, currentStation, onStationSelect, loading }: St
   return (
     <section id="stations" className="py-20 relative">
       <div className="container mx-auto px-4">
+        {/* Featured Station */}
+        <div className="mb-12">
+          <FeaturedStationCard />
+        </div>
+
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
