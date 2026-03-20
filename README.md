@@ -54,3 +54,20 @@ Vite is configured to proxy `/api/*` requests to `http://localhost:3001`, so fro
 - Deploy frontend and backend behind HTTPS.
 - Keep `/api/radio-stream` on your own domain so browsers/mobile apps fetch secure audio from your app endpoint.
 - The upstream Listen2MyRadio URL stays hidden from the client.
+
+### Important: browser playback in deployed frontend
+
+If your frontend is hosted separately from the Node backend, `/api/radio-stream` on the frontend domain may return HTML/404 (not audio), which causes browser `NotSupportedError`.
+
+Set a frontend env var that points to your deployed backend:
+
+```bash
+VITE_RADIO_PROXY_URL=https://your-backend-domain.com
+```
+
+The app now resolves stream URL as:
+
+- local dev: `/api/radio-stream` (via Vite proxy)
+- production with env var: `https://your-backend-domain.com/api/radio-stream`
+
+This is handled in `src/lib/radioStream.ts`.

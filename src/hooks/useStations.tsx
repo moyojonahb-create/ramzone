@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { RadioStation } from "@/types/radio";
+import { RADIO_STREAM_URL } from "@/lib/radioStream";
 
 export const useStations = () => {
   const [stations, setStations] = useState<RadioStation[]>([]);
@@ -27,7 +28,7 @@ export const useStations = () => {
         frequency: s.frequency || undefined,
         genre: s.genre,
         location: s.location,
-        streamUrl: "/api/radio-stream",
+        streamUrl: RADIO_STREAM_URL,
         isLive: s.is_live,
         listeners: s.listeners_count,
         description: s.description || "",

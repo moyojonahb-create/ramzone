@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { RADIO_STREAM_URL } from "@/lib/radioStream";
 
 const LiveRadioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -70,7 +71,7 @@ const LiveRadioPlayer = () => {
       audio.pause();
       audio.src = "";
       audio.load();
-      audio.src = "/api/radio-stream";
+      audio.src = RADIO_STREAM_URL;
       audio.load();
       await audio.play();
     } catch (err) {
@@ -90,7 +91,7 @@ const LiveRadioPlayer = () => {
 
   return (
     <div className="flex flex-col items-center gap-3 mt-6">
-      <audio ref={audioRef} src="/api/radio-stream" preload="none" playsInline />
+      <audio ref={audioRef} src={RADIO_STREAM_URL} preload="none" playsInline />
 
       <button
         type="button"
