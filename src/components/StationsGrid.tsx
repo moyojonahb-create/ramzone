@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RadioStation } from "@/types/radio";
 import RadioCard from "./RadioCard";
-import FeaturedStationCard from "./FeaturedStationCard";
+import FeaturedCarousel from "./FeaturedStationCard";
 import { Input } from "@/components/ui/input";
 import { Search, Filter } from "lucide-react";
 import { motion } from "framer-motion";
@@ -32,7 +32,7 @@ const StationsGrid = ({ stations, currentStation, onStationSelect, loading }: St
       <div className="container mx-auto px-4">
         {/* Featured Station */}
         <div className="mb-12">
-          <FeaturedStationCard />
+          <FeaturedCarousel />
         </div>
 
         <motion.div
