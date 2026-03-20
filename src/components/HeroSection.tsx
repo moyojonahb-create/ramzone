@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Play, Radio, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
+import LiveRadioPlayer from "@/components/LiveRadioPlayer";
 
 const HeroSection = () => {
   return (
@@ -87,6 +88,14 @@ const HeroSection = () => {
               <Play className="w-5 h-5 mr-2" />
               Listen Now
             </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <LiveRadioPlayer />
           </motion.div>
 
           <motion.div

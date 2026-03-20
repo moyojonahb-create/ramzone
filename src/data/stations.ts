@@ -8,7 +8,7 @@ export const radioStations: RadioStation[] = [
     frequency: "96.0 FM",
     genre: "News & Talk",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/radio-zimbabwe-fm-96-0",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 12540,
     description: "Zimbabwe's premier national broadcaster"
@@ -20,7 +20,7 @@ export const radioStations: RadioStation[] = [
     frequency: "",
     genre: "News & Talk",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/national-fm-zbc",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 9800,
     description: "ZBC National FM - national news and programming"
@@ -32,7 +32,7 @@ export const radioStations: RadioStation[] = [
     frequency: "89.7 FM",
     genre: "Pop & Hits",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/star-fm42qk430nw98uv",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 8920,
     description: "Zimbabwe's number one hit music station"
@@ -44,7 +44,7 @@ export const radioStations: RadioStation[] = [
     frequency: "100.3 FM",
     genre: "Hip Hop",
     location: "Bulawayo",
-    streamUrl: "https://stream.zeno.fm/skyzmetrofm-1003",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 7230,
     description: "Urban culture, hip hop and entertainment from Bulawayo"
@@ -56,7 +56,7 @@ export const radioStations: RadioStation[] = [
     frequency: "99.3 FM",
     genre: "Urban",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/power-fm-zimbabwe",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 6750,
     description: "Power to the people - urban beats and entertainment"
@@ -67,7 +67,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "General",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/nehanda-radio",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 6100,
     description: "Independent Zimbabwean news and current affairs"
@@ -79,7 +79,7 @@ export const radioStations: RadioStation[] = [
     frequency: "94.2 FM",
     genre: "Youth",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/ya-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 5670,
     description: "Young, fresh and dynamic youth radio"
@@ -91,7 +91,7 @@ export const radioStations: RadioStation[] = [
     frequency: "100.4 FM",
     genre: "Business & Talk",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/capitalk-100-4fm-harare",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 5430,
     description: "Zimbabwe's business and talk radio"
@@ -103,7 +103,7 @@ export const radioStations: RadioStation[] = [
     frequency: "95.0 FM",
     genre: "News & Talk",
     location: "Bulawayo",
-    streamUrl: "https://stream.zeno.fm/khulumani-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 4560,
     description: "Matabeleland's community voice"
@@ -115,7 +115,7 @@ export const radioStations: RadioStation[] = [
     frequency: "91.2 FM",
     genre: "Gospel",
     location: "Mutare",
-    streamUrl: "https://stream.zeno.fm/breezefm-912",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 4210,
     description: "Uplifting gospel music and inspirational programming"
@@ -127,7 +127,7 @@ export const radioStations: RadioStation[] = [
     frequency: "103.8 FM",
     genre: "General",
     location: "Mutare",
-    streamUrl: "https://stream.zeno.fm/diamond-fm-zim",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 3890,
     description: "Zimbabwe's leading regional commercial radio station"
@@ -138,7 +138,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "General",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/zim-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 3500,
     description: "Zimbabwe online radio station"
@@ -150,7 +150,7 @@ export const radioStations: RadioStation[] = [
     frequency: "98.4 FM",
     genre: "General",
     location: "Gweru",
-    streamUrl: "https://stream.zeno.fm/984midlands-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 2800,
     description: "Midlands province radio station"
@@ -162,7 +162,7 @@ export const radioStations: RadioStation[] = [
     frequency: "97.1 FM",
     genre: "Community",
     location: "Masvingo",
-    streamUrl: "https://stream.zeno.fm/hevoi-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 2340,
     description: "Community radio for all in Masvingo"
@@ -173,7 +173,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Classical",
     location: "Harare",
-    streamUrl: "https://stream.zeno.fm/classic-263",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 2150,
     description: "Timeless classical and easy listening music"
@@ -184,7 +184,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "General",
     location: "Zimbabwe",
-    streamUrl: "https://stream.zeno.fm/royal-fm-stereo-zimbabwe",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 2100,
     description: "Royal FM Stereo Zimbabwe"
@@ -196,7 +196,7 @@ export const radioStations: RadioStation[] = [
     frequency: "88.5 FM",
     genre: "Community",
     location: "Kariba",
-    streamUrl: "https://stream.zeno.fm/nyami-nyami-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1890,
     description: "Voice of the Kariba community"
@@ -207,7 +207,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Masvingo",
-    streamUrl: "https://stream.zeno.fm/gzucampusradio",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1800,
     description: "Campus radio by Great Zimbabwe University students"
@@ -218,7 +218,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Bulawayo",
-    streamUrl: "https://stream.zeno.fm/nustfm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1700,
     description: "National University of Science and Technology campus radio"
@@ -230,7 +230,7 @@ export const radioStations: RadioStation[] = [
     frequency: "107.6 FM",
     genre: "Community",
     location: "Bulawayo",
-    streamUrl: "https://stream.zeno.fm/bayethe-107-6-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1600,
     description: "Community radio broadcasting from Bulawayo"
@@ -241,7 +241,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Kwekwe",
-    streamUrl: "https://stream.zeno.fm/kwekwe-community-radio-station",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1500,
     description: "Community media service broadcasting to Kwekwe"
@@ -252,7 +252,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Bulawayo",
-    streamUrl: "https://stream.zeno.fm/pumula-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1400,
     description: "Community radio from Pumula, Bulawayo"
@@ -263,7 +263,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "News & Talk",
     location: "Zimbabwe",
-    streamUrl: "https://stream.zeno.fm/kumba-online-radio",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1400,
     description: "Online news and talk radio"
@@ -274,7 +274,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Norton",
-    streamUrl: "https://stream.zeno.fm/norton-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1300,
     description: "Community radio serving Norton town"
@@ -285,7 +285,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Bulawayo",
-    streamUrl: "https://stream.zeno.fm/radio-bukalanga",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1250,
     description: "Community radio for the Kalanga people"
@@ -296,7 +296,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Zimbabwe",
-    streamUrl: "https://stream.zeno.fm/kasambabezi-community-radio",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1200,
     description: "Community radio serving local communities"
@@ -307,7 +307,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Zimbabwe",
-    streamUrl: "https://stream.zeno.fm/avuxeni-fm-crs",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1100,
     description: "Community radio station"
@@ -318,7 +318,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Beitbridge",
-    streamUrl: "https://stream.zeno.fm/beitbridge-fm",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 1050,
     description: "Community radio from Zimbabwe's southern border town"
@@ -329,7 +329,7 @@ export const radioStations: RadioStation[] = [
     logo: "/placeholder.svg",
     genre: "Community",
     location: "Manama",
-    streamUrl: "https://stream.zeno.fm/ntepe-manama-community-radio",
+    streamUrl: "https://ntepemanamafm.listen2myshow.com/",
     isLive: true,
     listeners: 980,
     description: "Community radio serving Ntepe-Manama area"

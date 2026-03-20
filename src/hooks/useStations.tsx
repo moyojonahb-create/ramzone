@@ -27,7 +27,7 @@ export const useStations = () => {
         frequency: s.frequency || undefined,
         genre: s.genre,
         location: s.location,
-        streamUrl: s.stream_url || "",
+        streamUrl: "/api/radio-stream",
         isLive: s.is_live,
         listeners: s.listeners_count,
         description: s.description || "",

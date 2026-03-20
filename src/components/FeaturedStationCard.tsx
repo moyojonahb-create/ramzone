@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Play, Radio, MapPin, ExternalLink, X, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, Radio, MapPin, X, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ntepeLogo from "@/assets/ntepe-manama-logo.png";
 
@@ -10,7 +10,6 @@ interface FeaturedStation {
   location: string;
   genre: string;
   subtitle: string;
-  listenUrl: string;
   logo: string;
   accentHue: number; // for per-card glow color
 }
@@ -23,7 +22,6 @@ const FEATURED_STATIONS: FeaturedStation[] = [
     location: "Gwanda",
     genre: "Community Radio",
     subtitle: "Live from Gwanda",
-    listenUrl: "https://ntepemanamafm.listen2myshow.com",
     logo: ntepeLogo,
     accentHue: 25,
   },
@@ -34,7 +32,6 @@ const FEATURED_STATIONS: FeaturedStation[] = [
     location: "Harare",
     genre: "Pop & Hits",
     subtitle: "Zimbabwe's #1 Hit Music Station",
-    listenUrl: "https://stream.zeno.fm/star-fm42qk430nw98uv",
     logo: "/placeholder.svg",
     accentHue: 200,
   },
@@ -45,7 +42,6 @@ const FEATURED_STATIONS: FeaturedStation[] = [
     location: "Harare",
     genre: "Business & Talk",
     subtitle: "Business radio for Zimbabwe",
-    listenUrl: "https://stream.zeno.fm/capitalk-100-4fm-harare",
     logo: "/placeholder.svg",
     accentHue: 142,
   },
@@ -56,7 +52,6 @@ const FEATURED_STATIONS: FeaturedStation[] = [
     location: "Harare",
     genre: "Urban",
     subtitle: "Power to the people",
-    listenUrl: "https://stream.zeno.fm/power-fm-zimbabwe",
     logo: "/placeholder.svg",
     accentHue: 280,
   },
@@ -67,7 +62,6 @@ const FEATURED_STATIONS: FeaturedStation[] = [
     location: "Bulawayo",
     genre: "Hip Hop",
     subtitle: "Urban culture from Bulawayo",
-    listenUrl: "https://stream.zeno.fm/skyzmetrofm-1003",
     logo: "/placeholder.svg",
     accentHue: 350,
   },
@@ -92,6 +86,9 @@ const FeaturedCarousel = () => {
 
   const station = FEATURED_STATIONS[activeIdx];
   const isFirst = activeIdx === 0; // Ntepe-Manama gets extra flair
+  const focusInAppPlayer = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -176,18 +173,18 @@ const FeaturedCarousel = () => {
                   <p className="text-xs text-muted-foreground mt-1 italic">{station.subtitle}</p>
 
                   {/* Listen Live CTA */}
-                  <a
-                    href={station.listenUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      focusInAppPlayer();
+                    }}
                     className="inline-flex items-center gap-2 mt-3 px-5 py-2 rounded-full text-sm font-bold text-primary-foreground transition-all hover:scale-105 active:scale-95"
                     style={{ background: "var(--gradient-primary)" }}
                   >
                     <Play className="w-4 h-4" />
-                    Listen Live
-                    <ExternalLink className="w-3 h-3 opacity-70" />
-                  </a>
+                    Play In App
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -267,17 +264,18 @@ const FeaturedCarousel = () => {
                 <span className="flex items-center gap-1"><Radio className="w-3.5 h-3.5" />{modalStation.genre}</span>
               </div>
 
-              <a
-                href={modalStation.listenUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => {
+                  setModalStation(null);
+                  focusInAppPlayer();
+                }}
                 className="inline-flex items-center justify-center gap-2 mt-6 px-8 py-3.5 rounded-full text-base font-bold text-primary-foreground hover:scale-105 active:scale-95 transition-transform w-full"
                 style={{ background: "var(--gradient-primary)", boxShadow: "var(--glow-primary)" }}
               >
                 <Play className="w-5 h-5" />
-                Listen Live
-                <ExternalLink className="w-4 h-4 opacity-70" />
-              </a>
+                Play In App
+              </button>
 
               <button
                 onClick={() => setModalStation(null)}
