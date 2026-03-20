@@ -32,7 +32,7 @@ const StationsGrid = ({ stations, currentStation, onStationSelect, loading }: St
       <div className="container mx-auto px-4">
         {/* Featured Station */}
         <div className="mb-12">
-          <FeaturedStationCard />
+          <FeaturedCarousel />
         </div>
 
         <motion.div
