@@ -7,7 +7,6 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const STREAM_URLS = [
   "https://fpsnew1.listen2myradio.com:2199/listen.php?ip=82.145.63.6&port=10424&type=s1",
-  "http://82.145.63.6:10424/stream",
 ];
 
 const stripIcyPreface = () => {
@@ -16,11 +15,6 @@ const stripIcyPreface = () => {
   const pass = new PassThrough();
 
   return {
-    writable: new PassThrough({
-      transform(chunk, _enc, callback) {
-        callback(null, chunk);
-      },
-    }),
     output: pass,
     processChunk(chunk) {
       if (initialized) {
@@ -29,6 +23,12 @@ const stripIcyPreface = () => {
       }
 
       buffer = Buffer.concat([buffer, chunk]);
+
+      // Wait until we have enough bytes to safely detect an ICY preface
+      if (buffer.length < 4) {
+        return;
+      }
+
       const textStart = buffer.slice(0, 4).toString("utf8");
 
       if (textStart !== "ICY ") {
@@ -40,6 +40,7 @@ const stripIcyPreface = () => {
 
       const separatorIndex = buffer.indexOf("\r\n\r\n");
       if (separatorIndex === -1) {
+        // Keep buffering until the ICY response headers are complete
         return;
       }
 
