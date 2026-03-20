@@ -98,7 +98,7 @@ app.get("/api/radio-stream", (req, res) => {
   const tryUrl = (index) => {
     if (index >= STREAM_URLS.length) {
       if (!res.headersSent) {
-        res.status(502).send("Stream unavailable");
+        res.status(502).end();
       }
       return;
     }
@@ -139,7 +139,7 @@ app.get("/api/radio-stream", (req, res) => {
       stream.on("error", (err) => {
         console.error("Stream error:", err.message);
         if (!res.headersSent) {
-          res.status(502).send("Stream unavailable");
+          res.status(502).end();
         } else {
           res.end();
         }
@@ -152,7 +152,7 @@ app.get("/api/radio-stream", (req, res) => {
       console.error("Request error:", url, err.message);
       if (settled) {
         if (!res.headersSent) {
-          res.status(502).send("Failed to connect to stream");
+          res.status(502).end();
         } else {
           res.end();
         }
