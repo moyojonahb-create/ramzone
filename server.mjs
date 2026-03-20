@@ -6,6 +6,8 @@ import { PassThrough } from "node:stream";
 const app = express();
 const PORT = process.env.PORT || 3001;
 const STREAM_URLS = [
+  "http://82.145.63.6:10424/stream",
+  "http://82.145.63.6:10424/;stream.mp3",
   "https://fpsnew1.listen2myradio.com:2199/listen.php?ip=82.145.63.6&port=10424&type=s1",
 ];
 
@@ -108,9 +110,18 @@ app.get("/api/radio-stream", (req, res) => {
 
     upstreamRequest.on("response", (stream) => {
       upstreamStream = stream;
+      const contentType = String(stream.headers["content-type"] || "").toLowerCase();
 
       if (stream.statusCode !== 200) {
         console.error("Stream error:", url, stream.statusCode);
+        stream.resume();
+        tryUrl(index + 1);
+        return;
+      }
+
+      // Reject HTML/non-audio payloads before sending anything to browser
+      if (contentType.includes("text/html") || (contentType && !contentType.includes("audio"))) {
+        console.error("Rejected non-audio stream payload:", url, contentType);
         stream.resume();
         tryUrl(index + 1);
         return;

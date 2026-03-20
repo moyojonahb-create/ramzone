@@ -67,6 +67,10 @@ const LiveRadioPlayer = () => {
 
     try {
       // Refresh connection before starting a live stream
+      audio.pause();
+      audio.src = "";
+      audio.load();
+      audio.src = "/api/radio-stream";
       audio.load();
       await audio.play();
     } catch (err) {
